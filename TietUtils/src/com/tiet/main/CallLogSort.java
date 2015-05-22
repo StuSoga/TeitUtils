@@ -1,4 +1,4 @@
-package com.teit.main;
+package com.tiet.main;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.teit.entity.CallLog;
+import com.tiet.entity.CallLog;
 
 /**
  * 
@@ -26,7 +26,13 @@ public class CallLogSort {
 		Map<String, List<CallLog>> map = new LinkedHashMap<String, List<CallLog>>();
 		for (CallLog log : logs) {
 
-			key = (log.getLogID() + "").trim();
+			if (log.getLogID() == -1) {
+
+				key = "true|" + (log.getLogID() + "").trim();
+			} else {
+
+				key = "false|" + (log.getLogID() + "").trim();
+			}
 			if (map.get(key) == null) {
 
 				logList = new ArrayList<CallLog>();

@@ -1,4 +1,4 @@
-package com.teit.entity;
+package com.tiet.entity;
 
 
 public class CallLog {
